@@ -39,3 +39,32 @@ Model reliability was verified through:
 - Confusion matrix inspection for both classes
 
 ## Project Structure
+
+├── predictor_model.ipynb   # Full notebook: EDA, preprocessing, model training, evaluation
+├── novagen_dataset.csv     # Dataset
+├── best_model.pkl          # Saved final trained model (Gradient Boosting)
+├── requirements.txt        # Dependencies
+└── .gitignore
+
+## How to Run
+
+```bash
+pip install -r requirements.txt
+jupyter notebook predictor_model.ipynb
+```
+
+To load the saved model directly without retraining:
+
+```python
+import joblib
+model = joblib.load('best_model.pkl')
+predictions = model.predict(X_new)
+```
+
+## Tech Stack
+
+Python, pandas, scikit-learn, matplotlib, joblib
+
+## Author
+
+[Samir B K](https://github.com/Samir-BK)
